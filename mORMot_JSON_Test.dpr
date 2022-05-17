@@ -6,6 +6,7 @@ uses
   mormot.core.os, mormot.core.json;
 
 type TTestArray    = array of packed record
+                                       symbol       : String;
                                        Record01     : packed record
                                                                ax   : TDateTime;
                                                                bx   : String;
@@ -54,9 +55,7 @@ type TTestArray    = array of packed record
 var tmp       : String;
     new_array : TTestArray;
 
-
 begin
-  tmp := StringFromFile('JSON_Test.TXT');
+  tmp := StringFromFile('JSON_Test_03.TXT');
   DynArrayLoadJson(new_array,Pointer(tmp),TypeInfo(TTestArray));
-//  RecordLoadJson(new_array,Pointer(tmp),TypeInfo(TTestArray));
 end.
